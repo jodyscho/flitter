@@ -22,7 +22,10 @@ class TweetsListPresenter {
             return
         }
         
-        view?.appendTweets(tweets: [TweetViewModel(displayName: "Jody Schofield", userName: "@jodyscho", createdDate:"2 days", tweetText: "Merry Christmas everyone")])
+//        let tweet1 = TweetViewModel(displayName: "Jody Schofield", userName: "@jodyscho", createdDate:"2 days", tweetText: "Like any other social media site Facebook has length requirements when it comes to writing on the wall, providing status, messaging and commenting. Understanding how many characters you can use, enables you to more effectively use Facebook as a business or campaign tool.")
+//        let tweet2 = TweetViewModel(displayName: "Jody Schofield", userName: "@jodyscho", createdDate:"2 days", tweetText: "Merry Christmas everyone.")
+//        
+//        view?.appendTweets(tweets: [tweet1, tweet2])
     }
 
     func signOut() {
