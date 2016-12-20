@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UGv-6l-bDz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="ZQs-hh-2Va">
+            <objects>
+                <viewController id="UGv-6l-bDz" customClass="SignInViewController" customModule="flitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bd4-6y-9NT"/>
+                        <viewControllerLayoutGuide type="bottom" id="noH-wF-ynK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lw2-lk-o3i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AxC-v8-aqy">
+                                <rect key="frame" x="65" y="165" width="245" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.98453058270000005" blue="0.7425002772" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="kAJ-5Q-AwB"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dM-pv-bUm">
+                                <rect key="frame" x="65" y="203" width="245" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.98453058270000005" blue="0.7425002772" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to Flitter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKh-bW-Fwn">
+                                <rect key="frame" x="65" y="107" width="179" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXI-Yu-gju">
+                                <rect key="frame" x="65" y="259" width="245" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Sign in"/>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signIn:" destination="UGv-6l-bDz" eventType="touchUpInside" id="uR6-0c-5fb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28235294119999998" green="0.59215686270000001" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AxC-v8-aqy" firstAttribute="top" secondItem="Bd4-6y-9NT" secondAttribute="bottom" constant="145" id="72d-f6-NLE"/>
+                            <constraint firstItem="cKh-bW-Fwn" firstAttribute="leading" secondItem="lw2-lk-o3i" secondAttribute="leadingMargin" constant="49" id="Bdg-w8-6xs"/>
+                            <constraint firstItem="2dM-pv-bUm" firstAttribute="centerX" secondItem="AxC-v8-aqy" secondAttribute="centerX" id="GU7-yk-saz"/>
+                            <constraint firstItem="UXI-Yu-gju" firstAttribute="top" secondItem="2dM-pv-bUm" secondAttribute="bottom" constant="26" id="Gxs-Dc-LHI"/>
+                            <constraint firstItem="cKh-bW-Fwn" firstAttribute="top" secondItem="Bd4-6y-9NT" secondAttribute="bottom" constant="87" id="Qf4-MB-x9B"/>
+                            <constraint firstItem="2dM-pv-bUm" firstAttribute="width" secondItem="AxC-v8-aqy" secondAttribute="width" id="fI0-Ro-vkL"/>
+                            <constraint firstItem="UXI-Yu-gju" firstAttribute="width" secondItem="2dM-pv-bUm" secondAttribute="width" id="gnL-rg-nU4"/>
+                            <constraint firstItem="UXI-Yu-gju" firstAttribute="centerX" secondItem="2dM-pv-bUm" secondAttribute="centerX" id="jKK-Eg-1t5"/>
+                            <constraint firstItem="AxC-v8-aqy" firstAttribute="centerX" secondItem="lw2-lk-o3i" secondAttribute="centerX" id="sjX-0t-PNu"/>
+                            <constraint firstItem="2dM-pv-bUm" firstAttribute="top" secondItem="AxC-v8-aqy" secondAttribute="bottom" constant="8" id="t63-Lp-ugp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="password" destination="2dM-pv-bUm" id="5Wf-d7-7JK"/>
+                        <outlet property="signInButton" destination="UXI-Yu-gju" id="iqe-Di-XTX"/>
+                        <outlet property="userName" destination="AxC-v8-aqy" id="AIk-aI-z5j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uza-IW-6K1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="177.66116941529236"/>
+        </scene>
+    </scenes>
+</document>
