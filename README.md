@@ -19,6 +19,8 @@ I let lower level objects handle the async dispatching and then push to the main
 
 I didn't worry about optimizing for performance, i.e. There is no limit on the number of tweets fetched from the network or local data, large arrays of tweets and tweet viewmodels could be passed around.
 
+Instead of putting a timer to regularly poll for tweets or a pull to refresh, I just use the viewWillAppear method to trigger the fetch requests.
+
 
 # Frameworks
 Swinject
