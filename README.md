@@ -11,7 +11,7 @@ username: flitter
 password: flitter123!
 
 
-More users can be added/modified by editing the passwds.plist file in the Resources folder.
+More users can be added/modified by editing the passwds.plist file in the Resources folder. Usernames must be 3 characters or longer, passwords must be 8 characters or longer.
 
 I implemented the app with the VIPER architecture. You end up with a lot of classes but each class has a very clear role. Perhaps, if I were to do it again I might have used MVVM, VIP, etc.
 
