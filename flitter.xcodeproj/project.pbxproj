@@ -37,7 +37,7 @@
 		749948301E07708A00E71DA8 /* SignInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7499482F1E07708A00E71DA8 /* SignInTests.swift */; };
 		749948321E0784C000E71DA8 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749948311E0784C000E71DA8 /* SignInInteractor.swift */; };
 		749948341E07853F00E71DA8 /* TwitterWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749948331E07853F00E71DA8 /* TwitterWebservice.swift */; };
-		749948361E07861300E71DA8 /* InMemoryTwitterWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749948351E07861300E71DA8 /* InMemoryTwitterWebservice.swift */; };
+		749948361E07861300E71DA8 /* FakeTwitterWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749948351E07861300E71DA8 /* FakeTwitterWebservice.swift */; };
 		749948381E0788DA00E71DA8 /* SpySignInInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749948371E0788DA00E71DA8 /* SpySignInInteractorOutput.swift */; };
 		7499483B1E078F2A00E71DA8 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7499483A1E078F2A00E71DA8 /* SignInPresenter.swift */; };
 		7499483D1E07909F00E71DA8 /* SignInWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7499483C1E07909F00E71DA8 /* SignInWireframe.swift */; };
@@ -60,6 +60,9 @@
 		74FCDE671E09C795006AC042 /* oldtweets.json in Resources */ = {isa = PBXBuildFile; fileRef = 74FCDE661E09C795006AC042 /* oldtweets.json */; };
 		74FCDE691E09C8FB006AC042 /* LoadCachedTweetsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE681E09C8FB006AC042 /* LoadCachedTweetsInteractor.swift */; };
 		74FCDE6C1E09FB03006AC042 /* TweetLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE6B1E09FB03006AC042 /* TweetLoader.swift */; };
+		74FCDE6E1E0A01CA006AC042 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE6D1E0A01CA006AC042 /* README.md */; };
+		74FCDE701E0A08B9006AC042 /* TweetDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE6F1E0A08B9006AC042 /* TweetDateFormatter.swift */; };
+		74FCDE731E0A1557006AC042 /* newtweets.json in Resources */ = {isa = PBXBuildFile; fileRef = 74FCDE721E0A1557006AC042 /* newtweets.json */; };
 		AF4F4704B94CD07BE3C49379 /* Pods_flitterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC80E8EBF114E683CC25A1D /* Pods_flitterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,7 +114,7 @@
 		7499482F1E07708A00E71DA8 /* SignInTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInTests.swift; sourceTree = "<group>"; };
 		749948311E0784C000E71DA8 /* SignInInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		749948331E07853F00E71DA8 /* TwitterWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterWebservice.swift; sourceTree = "<group>"; };
-		749948351E07861300E71DA8 /* InMemoryTwitterWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryTwitterWebservice.swift; sourceTree = "<group>"; };
+		749948351E07861300E71DA8 /* FakeTwitterWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeTwitterWebservice.swift; sourceTree = "<group>"; };
 		749948371E0788DA00E71DA8 /* SpySignInInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpySignInInteractorOutput.swift; sourceTree = "<group>"; };
 		7499483A1E078F2A00E71DA8 /* SignInPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		7499483C1E07909F00E71DA8 /* SignInWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWireframe.swift; sourceTree = "<group>"; };
@@ -134,6 +137,9 @@
 		74FCDE661E09C795006AC042 /* oldtweets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = oldtweets.json; sourceTree = "<group>"; };
 		74FCDE681E09C8FB006AC042 /* LoadCachedTweetsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCachedTweetsInteractor.swift; sourceTree = "<group>"; };
 		74FCDE6B1E09FB03006AC042 /* TweetLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetLoader.swift; sourceTree = "<group>"; };
+		74FCDE6D1E0A01CA006AC042 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		74FCDE6F1E0A08B9006AC042 /* TweetDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDateFormatter.swift; sourceTree = "<group>"; };
+		74FCDE721E0A1557006AC042 /* newtweets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newtweets.json; sourceTree = "<group>"; };
 		B333ED1733C69934AB6C8FFE /* Pods-flitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-flitter/Pods-flitter.release.xcconfig"; sourceTree = "<group>"; };
 		D83F3A53C38809CA8AF50425 /* Pods-flitterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flitterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-flitterTests/Pods-flitterTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +187,7 @@
 		7439C5821E04F8260029E81E = {
 			isa = PBXGroup;
 			children = (
+				74FCDE6D1E0A01CA006AC042 /* README.md */,
 				7439C58D1E04F8260029E81E /* flitter */,
 				7439C5A21E04F8260029E81E /* flitterTests */,
 				7439C58C1E04F8260029E81E /* Products */,
@@ -237,6 +244,7 @@
 				7439C5971E04F8260029E81E /* LaunchScreen.storyboard */,
 				749948151E06E9D500E71DA8 /* SignIn.storyboard */,
 				74FCDE661E09C795006AC042 /* oldtweets.json */,
+				74FCDE721E0A1557006AC042 /* newtweets.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 				74FCDE681E09C8FB006AC042 /* LoadCachedTweetsInteractor.swift */,
 				749948501E08E5F000E71DA8 /* ComposeTweetInteractor.swift */,
 				74FCDE6B1E09FB03006AC042 /* TweetLoader.swift */,
+				74FCDE6F1E0A08B9006AC042 /* TweetDateFormatter.swift */,
 			);
 			name = "Interactors (use cases)";
 			sourceTree = "<group>";
@@ -305,8 +314,8 @@
 		749948181E06F36900E71DA8 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				749948351E07861300E71DA8 /* FakeTwitterWebservice.swift */,
 				749948201E06F75100E71DA8 /* RealmUserGateway.swift */,
-				749948351E07861300E71DA8 /* InMemoryTwitterWebservice.swift */,
 				749948481E08AC2A00E71DA8 /* RealmTweetGateway.swift */,
 			);
 			name = Adapters;
@@ -436,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74FCDE671E09C795006AC042 /* oldtweets.json in Resources */,
+				74FCDE731E0A1557006AC042 /* newtweets.json in Resources */,
 				7439C5991E04F8260029E81E /* LaunchScreen.storyboard in Resources */,
 				749948171E06E9D500E71DA8 /* SignIn.storyboard in Resources */,
 				7439C5961E04F8260029E81E /* Assets.xcassets in Resources */,
@@ -553,6 +563,7 @@
 			files = (
 				749948211E06F75100E71DA8 /* RealmUserGateway.swift in Sources */,
 				7499484F1E08E57F00E71DA8 /* ComposePresenter.swift in Sources */,
+				74FCDE701E0A08B9006AC042 /* TweetDateFormatter.swift in Sources */,
 				749948101E06E48700E71DA8 /* SignInConfigurator.swift in Sources */,
 				749948141E06E96700E71DA8 /* TweetsListWireframe.swift in Sources */,
 				749948491E08AC2A00E71DA8 /* RealmTweetGateway.swift in Sources */,
@@ -568,9 +579,10 @@
 				749948471E08A60600E71DA8 /* TweetGateway.swift in Sources */,
 				749948081E06DB7000E71DA8 /* ComposeConfiguratorImpl.swift in Sources */,
 				749948271E075B2B00E71DA8 /* TweetsListPresenter.swift in Sources */,
+				74FCDE6E1E0A01CA006AC042 /* README.md in Sources */,
 				749948511E08E5F000E71DA8 /* ComposeTweetInteractor.swift in Sources */,
 				749948121E06E4C500E71DA8 /* SignInConfiguratorImpl.swift in Sources */,
-				749948361E07861300E71DA8 /* InMemoryTwitterWebservice.swift in Sources */,
+				749948361E07861300E71DA8 /* FakeTwitterWebservice.swift in Sources */,
 				7499481B1E06F39C00E71DA8 /* User.swift in Sources */,
 				7499480C1E06E41400E71DA8 /* TweetsListConfigurator.swift in Sources */,
 				7499480E1E06E44800E71DA8 /* TweetsListConfiguratorImpl.swift in Sources */,

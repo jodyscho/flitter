@@ -15,7 +15,7 @@ class SignInTests: XCTestCase {
     override func setUp() {
         super.setUp()
         Container.defaultContainer.removeAll()
-        Container.defaultContainer.register(TwitterWebservice.self) { _ in InMemoryTwitterWebservice() }
+        Container.defaultContainer.register(TwitterWebservice.self) { _ in FakeTwitterWebservice() }
         setUpSUT()
     }
     

@@ -6,9 +6,11 @@
 import Foundation
 
 protocol TweetsListView: class {
+    func displayError(message: String)
     func displaySignIn()
     func clearTweets()
     func displayTweets(tweets: [TweetViewModel]?)
+    func appendTweets(tweets: [TweetViewModel])
 }
 
 class TweetsListPresenter {
@@ -16,7 +18,9 @@ class TweetsListPresenter {
     var loadTweetsInteractor: LoadCachedTweetsInteractor!
     var signOutInteractor: SignOutInteractor!
     weak var view: TweetsListView?
+    let dateFormatter = TweetDateFormatter()
     
+
     func fetchTweets() {
         if CheckSignedInUser.currentUser() == nil {
             view?.displaySignIn()
@@ -30,6 +34,17 @@ class TweetsListPresenter {
                 self.view?.clearTweets()
             }
         }
+        
+        fetchTweetsInteractor.fetchTweets() { (tweets: [Tweet]?, error: TwitterError?) in
+            guard error == nil else {
+                self.view?.displayError(message: "Error getting tweets")
+                return
+            }
+
+            if let tweets = tweets {
+                self.view?.appendTweets(tweets: tweets.map(self.transform).reversed())
+            }
+        }
     }
 
     func signOut() {
@@ -37,13 +52,9 @@ class TweetsListPresenter {
     }
     
     fileprivate func transform(tweet: Tweet) -> TweetViewModel {
-        let tweetDate = "2 days"
+        let tweetDate = dateFormatter.formatDate(since1970: tweet.createdAt)
         return TweetViewModel(displayName: tweet.displayName, userName: "@\(tweet.username)", createdDate:tweetDate, tweetText: tweet.text)
     }
-}
-
-extension TweetsListPresenter: FetchTweetsInteractorOutput {
-    
 }
 
 extension TweetsListPresenter: SignOutInteractorOutput {

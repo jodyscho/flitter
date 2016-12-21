@@ -16,4 +16,5 @@ protocol TwitterWebservice {
     func signin(username: String, password: String, completion: @escaping (User?, TwitterError?) -> ())
     func signout(username: String, completion: @escaping (TwitterError?) -> ())
     func post(tweet: Tweet, completion: @escaping (TwitterError?) -> ())
+    func fetchTweets(since: Double, completion: @escaping ([Tweet]?, TwitterError?) -> ())
 }

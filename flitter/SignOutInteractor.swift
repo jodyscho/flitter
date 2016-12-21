@@ -53,5 +53,7 @@ class SignOutInteractor {
         userGateway?.remove()
         tweetGateway?.clear()
         UserDefaults.standard.removeObject(forKey: "FirstTimeLoading")
+        UserDefaults.standard.removeObject(forKey: "LastFetchTime")
     }
+
 }

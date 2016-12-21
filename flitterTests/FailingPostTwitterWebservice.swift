@@ -19,4 +19,8 @@ class FailingPostTwitterWebservice: TwitterWebservice {
             completion(.unknown)
         }
     }
+    
+    func fetchTweets(since: Double, completion: @escaping ([Tweet]?, TwitterError?) -> ()) {
+    }
+
 }

@@ -56,7 +56,6 @@ class ComposeViewController: UIViewController {
     }
 }
 
-// Mark: - Observe changes to the tweet text
 extension ComposeViewController {
 
     fileprivate func listenForTweetTextChanges() {
@@ -86,7 +85,7 @@ extension ComposeViewController {
     }
 }
 
-// Mark: - Keyboard Notifications
+
 extension ComposeViewController {
     
     fileprivate func listenForKeyboardNotifications() {
@@ -125,10 +124,14 @@ extension ComposeViewController {
 extension ComposeViewController: ComposeView {
 
     func postSuccessful() {
-        wireframe.dismiss()
+        DispatchQueue.main.async {
+            self.wireframe.dismiss()
+        }
     }
     
     func postFailedToSend(message: String) {
-        wireframe.displayError(message: message)
+        DispatchQueue.main.async {
+            self.wireframe.displayError(message: message)
+        }
     }
 }

@@ -36,7 +36,6 @@ class TweetsListConfiguratorImpl: TweetsListConfigurator {
 
     fileprivate func configureFetchTweetsInteractor(presenter: TweetsListPresenter) {
         let interactor = FetchTweetsInteractor()
-        interactor.output = presenter
         presenter.fetchTweetsInteractor = interactor
     }
     

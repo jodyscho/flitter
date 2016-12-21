@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Container.defaultContainer.register(TweetsListConfigurator.self) { _ in TweetsListConfiguratorImpl() }
         Container.defaultContainer.register(ComposeConfigurator.self) { _ in ComposeConfiguratorImpl() }
         Container.defaultContainer.register(UserGateway.self) { _ in RealmUserGateway() }
-        Container.defaultContainer.register(TwitterWebservice.self) { _ in InMemoryTwitterWebservice() }
+        Container.defaultContainer.register(TwitterWebservice.self) { _ in FakeTwitterWebservice() }
         Container.defaultContainer.register(TweetGateway.self) { _ in RealmTweetGateway() }
     }
 }
