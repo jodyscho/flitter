@@ -26,7 +26,7 @@ class UserGatewayTests: XCTestCase {
     }
     
     func testSaveUser() {
-        let user = User(value: ["username": "username", "displayName": "Display Name"])
+        let user = User(username: "username", displayName: "Display Name")
         sut.save(user: user)
         
         let currentUser = sut.currentUser()
@@ -34,7 +34,7 @@ class UserGatewayTests: XCTestCase {
     }
 
     func testRemoveUser() {
-        let user = User(value: ["username": "username", "displayName": "Display Name"])
+        let user = User(username: "username", displayName: "Display Name")
 
         sut?.save(user: user)
         sut?.remove()

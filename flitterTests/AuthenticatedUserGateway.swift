@@ -19,7 +19,7 @@ class AuthenticatedUserGateway: UserGateway {
     }
     
     func currentUser() -> User? {
-        return User(value: ["username": "User", "displayName": "Display Name"])
+        return User(username: "User", displayName: "Display Name")
     }
 }
 

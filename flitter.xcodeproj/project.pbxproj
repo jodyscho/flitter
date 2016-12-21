@@ -63,6 +63,8 @@
 		74FCDE6E1E0A01CA006AC042 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE6D1E0A01CA006AC042 /* README.md */; };
 		74FCDE701E0A08B9006AC042 /* TweetDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE6F1E0A08B9006AC042 /* TweetDateFormatter.swift */; };
 		74FCDE731E0A1557006AC042 /* newtweets.json in Resources */ = {isa = PBXBuildFile; fileRef = 74FCDE721E0A1557006AC042 /* newtweets.json */; };
+		74FCDE771E0AAB96006AC042 /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE761E0AAB96006AC042 /* RealmUser.swift */; };
+		74FCDE791E0AABD8006AC042 /* RealmTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCDE781E0AABD8006AC042 /* RealmTweet.swift */; };
 		AF4F4704B94CD07BE3C49379 /* Pods_flitterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC80E8EBF114E683CC25A1D /* Pods_flitterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,8 @@
 		74FCDE6D1E0A01CA006AC042 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74FCDE6F1E0A08B9006AC042 /* TweetDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDateFormatter.swift; sourceTree = "<group>"; };
 		74FCDE721E0A1557006AC042 /* newtweets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newtweets.json; sourceTree = "<group>"; };
+		74FCDE761E0AAB96006AC042 /* RealmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
+		74FCDE781E0AABD8006AC042 /* RealmTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTweet.swift; sourceTree = "<group>"; };
 		B333ED1733C69934AB6C8FFE /* Pods-flitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-flitter/Pods-flitter.release.xcconfig"; sourceTree = "<group>"; };
 		D83F3A53C38809CA8AF50425 /* Pods-flitterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flitterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-flitterTests/Pods-flitterTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,9 +318,11 @@
 		749948181E06F36900E71DA8 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				749948351E07861300E71DA8 /* FakeTwitterWebservice.swift */,
+				74FCDE761E0AAB96006AC042 /* RealmUser.swift */,
+				74FCDE781E0AABD8006AC042 /* RealmTweet.swift */,
 				749948201E06F75100E71DA8 /* RealmUserGateway.swift */,
 				749948481E08AC2A00E71DA8 /* RealmTweetGateway.swift */,
+				749948351E07861300E71DA8 /* FakeTwitterWebservice.swift */,
 			);
 			name = Adapters;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				749948491E08AC2A00E71DA8 /* RealmTweetGateway.swift in Sources */,
 				7499481D1E06F62900E71DA8 /* UserGateway.swift in Sources */,
 				749948411E07FA5D00E71DA8 /* CheckSignedInUser.swift in Sources */,
+				74FCDE771E0AAB96006AC042 /* RealmUser.swift in Sources */,
 				749948451E0807B500E71DA8 /* SignOutInteractor.swift in Sources */,
 				749948341E07853F00E71DA8 /* TwitterWebservice.swift in Sources */,
 				749948041E06D15200E71DA8 /* ComposeWireframe.swift in Sources */,
@@ -585,6 +592,7 @@
 				749948361E07861300E71DA8 /* FakeTwitterWebservice.swift in Sources */,
 				7499481B1E06F39C00E71DA8 /* User.swift in Sources */,
 				7499480C1E06E41400E71DA8 /* TweetsListConfigurator.swift in Sources */,
+				74FCDE791E0AABD8006AC042 /* RealmTweet.swift in Sources */,
 				7499480E1E06E44800E71DA8 /* TweetsListConfiguratorImpl.swift in Sources */,
 				7499484D1E08AF9200E71DA8 /* Tweet.swift in Sources */,
 				7439C5B01E0580440029E81E /* ComposeViewController.swift in Sources */,

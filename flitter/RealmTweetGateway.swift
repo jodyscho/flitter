@@ -13,18 +13,14 @@ class RealmTweetGateway: TweetGateway {
     func fetchTweets(completion: @escaping ([Tweet]?) -> ()) {
         serialQueue.async {
             let realm = try! Realm()
-            let tweets = realm.objects(Tweet.self).sorted(byProperty: "createdAt", ascending: false)
+            let realmTweets = realm.objects(RealmTweet.self).sorted(byProperty: "createdAt", ascending: false)
             
-            if tweets.count == 0 {
+            if realmTweets.count == 0 {
                 completion(nil)
                 return
             }
             
-            var result = [Tweet]()
-            for tweet in tweets {
-                result.append(tweet)
-            }
-            completion(result)
+            completion(realmTweets.map { $0.transformToTweet() })
         }
     }
 
@@ -32,7 +28,7 @@ class RealmTweetGateway: TweetGateway {
         serialQueue.async {
             let realm = try! Realm()
             try! realm.write {
-                tweets.forEach { realm.add($0) }
+                tweets.forEach { realm.add(RealmTweet(tweet: $0)) }
             }
         }
     }
@@ -41,7 +37,7 @@ class RealmTweetGateway: TweetGateway {
         serialQueue.async {
             let realm = try! Realm()
             try! realm.write {
-                realm.add(tweet)
+                realm.add(RealmTweet(tweet: tweet))
             }
         }
     }

@@ -43,7 +43,7 @@ class ComposeTweetInteractor {
     }
     
     fileprivate func buildTweet(user: User, text: String) -> Tweet {
-        return Tweet(value: ["id": UUID.init().uuidString, "username": user.username, "displayName": user.displayName, "text": text, "createdAt": Date().timeIntervalSince1970] )
+        return Tweet(value: ["username": user.username, "displayName": user.displayName, "text": text] )
     }
     
     fileprivate func postFailed(error: TwitterError) {

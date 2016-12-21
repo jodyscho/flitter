@@ -17,13 +17,13 @@ class FakeTwitterWebservice: TwitterWebservice {
 
     func signin(username: String, password: String, completion: @escaping (User?, TwitterError?) -> ()) {
         DispatchQueue.global().asyncAfter(deadline: .now() + NetworkDelayInSeconds) {
-            guard let userInfo = self.passwords?[username] else {
+            guard let userInfo = self.passwords?[username] as? [String : String] else {
                 completion(nil, .invalidUsernamePassword)
                 return
             }
-            
-            if userInfo["password"] as? String == password {
-                completion(User(value: userInfo as! [String : String]), nil)
+
+            if userInfo["password"] == password {
+                completion(User(username: userInfo["username"]!, displayName: userInfo["displayName"]!), nil)
             } else {
                 completion(nil, .invalidUsernamePassword)
             }

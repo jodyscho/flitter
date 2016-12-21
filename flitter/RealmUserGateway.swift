@@ -12,14 +12,14 @@ class RealmUserGateway: UserGateway {
     func save(user: User) {
         let realm = try! Realm()
         try! realm.write {
-            realm.add(user)
+            realm.add(RealmUser(user: user))
         }
     }
 
     func remove() {
         let realm = try! Realm()
         
-        let users = realm.objects(User.self)
+        let users = realm.objects(RealmUser.self)
         try! realm.write {
             users.forEach { realm.delete($0) }
         }
@@ -27,21 +27,7 @@ class RealmUserGateway: UserGateway {
     
     func currentUser() -> User? {
         let realm = try! Realm()
-        let attached = realm.objects(User.self).first
-        return detachedUser(user: attached)
-    }
-}
-
-extension RealmUserGateway {
-
-    fileprivate func detachedUser(user: User?) -> User? {
-        guard let user = user else {
-            return nil
-        }
-        
-        let detached = User()
-        detached.username = user.username
-        detached.displayName = user.displayName
-        return detached
+        let realmUser = realm.objects(RealmUser.self).first
+        return realmUser?.transformToUser()
     }
 }
