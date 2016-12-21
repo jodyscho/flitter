@@ -11,7 +11,8 @@ class TweetsListConfiguratorImpl: TweetsListConfigurator {
         configureWireframe(viewController: viewController)
         
         let presenter = configurePresenter(viewController: viewController)
-        configureDisplayTweetsInteractor(presenter: presenter)
+        configureLoadTweetsInteractor(presenter: presenter)
+        configureFetchTweetsInteractor(presenter: presenter)
         configureSignOutInteractor(presenter: presenter)
     }
 
@@ -28,10 +29,15 @@ class TweetsListConfiguratorImpl: TweetsListConfigurator {
         return presenter
     }
 
-    fileprivate func configureDisplayTweetsInteractor(presenter: TweetsListPresenter) {
-        let interactor = DisplayTweetsInteractor()
+    fileprivate func configureLoadTweetsInteractor(presenter: TweetsListPresenter) {
+        let interactor = LoadCachedTweetsInteractor()
+        presenter.loadTweetsInteractor = interactor
+    }
+
+    fileprivate func configureFetchTweetsInteractor(presenter: TweetsListPresenter) {
+        let interactor = FetchTweetsInteractor()
         interactor.output = presenter
-        presenter.displayTweetsInteractor = interactor
+        presenter.fetchTweetsInteractor = interactor
     }
     
     fileprivate func configureSignOutInteractor(presenter: TweetsListPresenter) {

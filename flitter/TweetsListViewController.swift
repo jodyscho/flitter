@@ -51,33 +51,19 @@ class TweetsListViewController: UITableViewController {
 extension TweetsListViewController: TweetsListView {
 
     func displaySignIn() {
-        wireframe.displaySignIn()
+        DispatchQueue.main.async {
+            self.wireframe.displaySignIn()
+        }
     }
     
     func clearTweets() {
-        viewmodel = nil
-        tableView.reloadData()
+        displayTweets(tweets: nil)
     }
     
-    func appendTweets(tweets: [TweetViewModel]) {
-        viewmodel = concatTweets(newTweets: tweets, viewModel: viewmodel)
-        
-        let indexPaths = buildIndexPaths(tweets: tweets)
-        tableView.insertRows(at: indexPaths, with: .automatic)
-    }
-    
-    fileprivate func concatTweets(newTweets: [TweetViewModel], viewModel: [TweetViewModel]?) -> [TweetViewModel] {
-        guard let viewModel = viewModel else {
-            return newTweets
-        }
-        var model = newTweets
-        model.append(contentsOf: viewModel)
-        return model
-    }
-    
-    fileprivate func buildIndexPaths(tweets: [TweetViewModel]) -> [IndexPath] {
-        return tweets.enumerated().map { (index, _) in
-            IndexPath(row: index, section: 0)
+    func displayTweets(tweets: [TweetViewModel]?) {
+        DispatchQueue.main.async {
+            self.viewmodel = tweets
+            self.tableView.reloadData()
         }
     }
 }

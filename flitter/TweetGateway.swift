@@ -5,8 +5,10 @@
 
 import Foundation
 
+
 protocol TweetGateway {
-    func fetchTweets() -> [Tweet]?
+    func fetchTweets(completion: @escaping ([Tweet]?) -> ())
+    func save(tweets: [Tweet])
     func save(tweet: Tweet)
     func clear()
 }

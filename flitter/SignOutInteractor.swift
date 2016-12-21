@@ -52,5 +52,6 @@ class SignOutInteractor {
     fileprivate func clearUserData() {
         userGateway?.remove()
         tweetGateway?.clear()
+        UserDefaults.standard.removeObject(forKey: "FirstTimeLoading")
     }
 }

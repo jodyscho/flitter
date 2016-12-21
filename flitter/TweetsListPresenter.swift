@@ -8,11 +8,12 @@ import Foundation
 protocol TweetsListView: class {
     func displaySignIn()
     func clearTweets()
-    func appendTweets(tweets: [TweetViewModel])
+    func displayTweets(tweets: [TweetViewModel]?)
 }
 
 class TweetsListPresenter {
-    var displayTweetsInteractor: DisplayTweetsInteractor!
+    var fetchTweetsInteractor: FetchTweetsInteractor!
+    var loadTweetsInteractor: LoadCachedTweetsInteractor!
     var signOutInteractor: SignOutInteractor!
     weak var view: TweetsListView?
     
@@ -22,18 +23,26 @@ class TweetsListPresenter {
             return
         }
         
-//        let tweet1 = TweetViewModel(displayName: "Jody Schofield", userName: "@jodyscho", createdDate:"2 days", tweetText: "Like any other social media site Facebook has length requirements when it comes to writing on the wall, providing status, messaging and commenting. Understanding how many characters you can use, enables you to more effectively use Facebook as a business or campaign tool.")
-//        let tweet2 = TweetViewModel(displayName: "Jody Schofield", userName: "@jodyscho", createdDate:"2 days", tweetText: "Merry Christmas everyone.")
-//        
-//        view?.appendTweets(tweets: [tweet1, tweet2])
+        loadTweetsInteractor.load() {
+            if let tweets = $0 {
+                self.view?.displayTweets(tweets: tweets.map(self.transform))
+            } else {
+                self.view?.clearTweets()
+            }
+        }
     }
 
     func signOut() {
         signOutInteractor.signOut()
     }
+    
+    fileprivate func transform(tweet: Tweet) -> TweetViewModel {
+        let tweetDate = "2 days"
+        return TweetViewModel(displayName: tweet.displayName, userName: "@\(tweet.username)", createdDate:tweetDate, tweetText: tweet.text)
+    }
 }
 
-extension TweetsListPresenter: DisplayTweetsInteractorOutput {
+extension TweetsListPresenter: FetchTweetsInteractorOutput {
     
 }
 

@@ -4,6 +4,7 @@
 //
 
 import XCTest
+import Swinject
 @testable import flitter
 
 
@@ -14,6 +15,7 @@ class RealmTweetGatewayTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        Container.defaultContainer.removeAll()
         sut = RealmTweetGateway()
         sut.clear()
     }
@@ -25,32 +27,33 @@ class RealmTweetGatewayTests: XCTestCase {
     }
 
     func testFetchEmptyGateway_ReturnsZeroTweets() {
-        let tweets = sut.fetchTweets()
-        XCTAssertNil(tweets)
+        let exp = expectation(description: "fetch")
+        sut.fetchTweets() { (tweets: [Tweet]?) in
+            XCTAssertNil(tweets)
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 0.5, handler: nil)
     }
     
     func testFetchOneTweet_ReturnsOneTweet() {
         sut.save(tweet: fake)
-        let tweets = sut.fetchTweets()
-
-        XCTAssertNotNil(tweets)
-        XCTAssertEqual(1, tweets?.count)
+        let exp = expectation(description: "fetch")
+        sut.fetchTweets() { (tweets: [Tweet]?) in
+            XCTAssertNotNil(tweets)
+            XCTAssertEqual(1, tweets?.count)
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 0.5, handler: nil)
     }
 
     func testClear_RemovesAllTheTweets() {
         sut.save(tweet: fake)
         sut.clear()
-        let tweets = sut.fetchTweets()
-
-        XCTAssertNil(tweets)
-    }
-    
-    func testSaveAcrossSessions_ReturnsCorrectTweets() {
-        sut.save(tweet: fake)
-        sut = RealmTweetGateway()
-        let tweets = sut.fetchTweets()
-        
-        XCTAssertNotNil(tweets)
-        XCTAssertEqual(1, tweets?.count)
+        let exp = expectation(description: "fetch")
+        sut.fetchTweets() { (tweets: [Tweet]?) in
+            XCTAssertNil(tweets)
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 0.5, handler: nil)
     }
 }

@@ -8,9 +8,9 @@ import RealmSwift
 
 
 class Tweet: Object {
-    dynamic var id: String = ""
+    dynamic var id: String = UUID.init().uuidString
     dynamic var username: String = ""
     dynamic var displayName: String = ""
     dynamic var text: String = ""
-    dynamic var createdAt: Double = 0
+    dynamic var createdAt: Double = Date().timeIntervalSince1970
 }

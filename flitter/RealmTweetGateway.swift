@@ -8,36 +8,50 @@ import RealmSwift
 
 
 class RealmTweetGateway: TweetGateway {
+    let serialQueue = DispatchQueue(label: "RealmTweetGateway")
     
-    init() {
+    func fetchTweets(completion: @escaping ([Tweet]?) -> ()) {
+        serialQueue.async {
+            let realm = try! Realm()
+            let tweets = realm.objects(Tweet.self).sorted(byProperty: "createdAt", ascending: false)
+            
+            if tweets.count == 0 {
+                completion(nil)
+                return
+            }
+            
+            var result = [Tweet]()
+            for tweet in tweets {
+                result.append(tweet)
+            }
+            completion(result)
+        }
     }
 
-    func fetchTweets() -> [Tweet]? {
-        let realm = try! Realm()
-        let tweets = realm.objects(Tweet.self).sorted(byProperty: "createdAt")
-
-        if tweets.count == 0 {
-            return nil
+    func save(tweets: [Tweet]) {
+        serialQueue.async {
+            let realm = try! Realm()
+            try! realm.write {
+                tweets.forEach { realm.add($0) }
+            }
         }
-
-        var result = [Tweet]()
-        for tweet in tweets {
-            result.append(tweet)
-        }
-        return result
     }
 
     func save(tweet: Tweet) {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(tweet)
+        serialQueue.async {
+            let realm = try! Realm()
+            try! realm.write {
+                realm.add(tweet)
+            }
         }
     }
 
     func clear() {
-        let realm = try! Realm()
-        try! realm.write {
-            realm.deleteAll()
+        serialQueue.async {
+            let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll()
+            }
         }
     }
 }

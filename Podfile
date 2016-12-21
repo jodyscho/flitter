@@ -9,7 +9,7 @@ target 'flitter' do
   pod 'RxCocoa', '~> 3.0'
   pod 'Swinject', '2.0.0-beta.3'
   pod 'RealmSwift', '2.1.2'
-  
+
   target 'flitterTests' do
     inherit! :search_paths
     # Pods for testing
