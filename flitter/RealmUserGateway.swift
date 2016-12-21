@@ -27,6 +27,21 @@ class RealmUserGateway: UserGateway {
     
     func currentUser() -> User? {
         let realm = try! Realm()
-        return realm.objects(User.self).first
+        let attached = realm.objects(User.self).first
+        return detachedUser(user: attached)
+    }
+}
+
+extension RealmUserGateway {
+
+    fileprivate func detachedUser(user: User?) -> User? {
+        guard let user = user else {
+            return nil
+        }
+        
+        let detached = User()
+        detached.username = user.username
+        detached.displayName = user.displayName
+        return detached
     }
 }
