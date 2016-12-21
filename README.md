@@ -26,7 +26,7 @@ RxSwift/RxCocoa
 Realm/RealmSwift
 - used to store the current user and the tweets
 
-** I was going to use BrightFutures but decided to stick with closures/blocks instead.
+** I was going to use BrightFutures but decided to stick with callback blocks instead.
 
 # Tests
 - The majority of the "business" logic is captured in the interactors/use cases so this is where most of the unit tests focus on. The unit tests where all written before the "production" code.
