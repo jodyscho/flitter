@@ -30,7 +30,8 @@ RxSwift/RxCocoa
 - also used for the compose tweet screen (text counter, tweet button enabled, keyboard show/hide)
 
 Realm/RealmSwift
-- used to store the current user and the tweets. I ran into some interesting threading issues I wasn't expecting. I still feel couchbase is more flexible.
+- used to store the current user and the tweets. I've never used realm before and everything I read on it made it sound really easy so I thought I'd give it a try for this app. There are several things I dislike about realm and still prefer couchbase lite. (1) Realm is really picky about accessing entities from different threads, even for read-only access. (2) because of that you have to clutter your design/architecture with Realm objects. (3) Minor, but I'm not a fan of subclassing from `Object`. It makes Realm (my datastorage) a larger part of the app than I'd like.
+To avoid these issues I decided to create a set of Realm entities (RealmUser and RealmTweet) and the domain entities are structs (User and Tweet).
 
 ** I was going to use BrightFutures but decided to stick with callback blocks instead.
 
