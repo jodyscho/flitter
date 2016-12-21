@@ -40,4 +40,17 @@ class SignOutTests: XCTestCase {
 
         XCTAssertEqual(TwitterError.notSignedIn, spyOutput.error)
     }
+    
+    func testSignOut_WhenSignedIn_RemovesCurrentUser() {
+        let authUserGateway = AuthenticatedUserGateway()
+        Container.defaultContainer.register(UserGateway.self) { _ in authUserGateway }
+        sut = SignOutInteractor()
+        sut.output = spyOutput
+        
+        sut.signOut()
+        waitForExpectations(timeout: 0.5, handler: nil)
+        
+        XCTAssertTrue(spyOutput.succeeded)
+        XCTAssertEqual(1, authUserGateway.removeCalled)
+    }
 }
