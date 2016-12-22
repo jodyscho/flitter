@@ -23,9 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AxC-v8-aqy">
-                                <rect key="frame" x="65" y="165" width="245" height="30"/>
+                                <rect key="frame" x="65" y="165" width="245" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.98453058270000005" blue="0.7425002772" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ynf-bv-fSQ"/>
                                     <constraint firstAttribute="width" constant="245" id="kAJ-5Q-AwB"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -33,8 +34,11 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dM-pv-bUm">
-                                <rect key="frame" x="65" y="203" width="245" height="30"/>
+                                <rect key="frame" x="65" y="213" width="245" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.98453058270000005" blue="0.7425002772" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="re3-k2-DDH"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -46,8 +50,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXI-Yu-gju">
-                                <rect key="frame" x="65" y="259" width="245" height="30"/>
+                                <rect key="frame" x="65" y="279" width="245" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Kfh-Lb-9qb"/>
+                                </constraints>
                                 <state key="normal" title="Sign in"/>
                                 <state key="disabled">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
